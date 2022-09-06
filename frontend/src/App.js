@@ -4,6 +4,15 @@ import BasicCard from './components/Cards'
 // import BasicPagination from './components/pagination'
 import DrawerAppBar from './components/Navbar'
 
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Link,
+} from "react-router-dom";
+// import your route components too
+
+import About from './components/About'
 export default function App(){
   
   const [error, setError] = useState(null)
@@ -38,8 +47,9 @@ export default function App(){
   return (
     <div>
      <DrawerAppBar/>
+     
       {items.map((item) =>(
-         <div className='car'>
+         <div className='car' key = {item.id} >
       <br/>
       
          <BasicCard 
@@ -49,10 +59,12 @@ export default function App(){
       )
        
       )}
-      {/* <>
-      <BasicPagination/>
-      </> */}
+      
     </div>
+
+    
     
   )
 }
+
+<Route path="teams/new" element={<About />} />

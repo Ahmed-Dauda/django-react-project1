@@ -71,6 +71,7 @@ export default function DrawerAppBar(props: Props) {
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
            Codethinker' Academy
+          
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
@@ -103,6 +104,7 @@ export default function DrawerAppBar(props: Props) {
         <Typography>
          
         testing of navbar
+        
         </Typography>
       </Box>
     </Box>

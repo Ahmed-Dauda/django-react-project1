@@ -137,9 +137,9 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',
-    'https://adfrontend.herokuapp.com/',
-    'https://adfrontend.herokuapp.com',
-    'http://adfrontend.herokuapp.com/',
+    # 'https://adfrontend.herokuapp.com/',
+    # 'https://adfrontend.herokuapp.com',
+    # 'http://adfrontend.herokuapp.com/',
     
 ]
 # Heroku: Update database configuration from $DATABASE_URL.
