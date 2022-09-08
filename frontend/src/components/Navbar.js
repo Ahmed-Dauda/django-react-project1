@@ -12,7 +12,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-
+import Navbar from './Navbar.css'
 interface Props {
   /**
    * Injected by the documentation to work in an iframe.
@@ -21,10 +21,15 @@ interface Props {
   window?: () => Window;
 }
 
+// export default function NewNav({home}){
+//   return (
+//     <h1>{home}</h1>
+//   )
+// }
 const drawerWidth = 240;
 const navItems = ['Home', 'About', 'Contact'];
 
-export default function DrawerAppBar(props: Props) {
+export default function DrawerAppBar(props: Props, {home, about, blog}) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -35,17 +40,21 @@ export default function DrawerAppBar(props: Props) {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        Codethinker' Academy
+        Learning
       </Typography>
       <Divider />
       <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText secondary={item} />
+      <ListItem  disablePadding>
+            <ListItemButton className = '' sx={{ textAlign: 'center'}}>
+            <div  className = 'listnav'>
+              <h4>{props.home}</h4>
+              <h4>{props.about}</h4>
+              <h4>{props.blog}</h4>
+            </div>
+  
             </ListItemButton>
-          </ListItem>
-        ))}
+      </ListItem>
+    
       </List>
     </Box>
   );
@@ -70,15 +79,23 @@ export default function DrawerAppBar(props: Props) {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-           Codethinker' Academy
+           Codethinker
           
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+          
+          <div  className = 'newnav'>
+           <h1>{props.home}</h1>
+           <h1>{props.about}</h1> 
+           <h1>{props.blog}</h1>   
+          </div>
+{/*  
             {navItems.map((item) => (
               <Button key={item} sx={{ color: '#fff' }}>
-                {item}
+                {item}  
               </Button>
-            ))}
+
+            ))} */}
           </Box>
         </Toolbar>
       </AppBar>
@@ -102,8 +119,6 @@ export default function DrawerAppBar(props: Props) {
       <Box component="main" sx={{ p: 3 }}>
         <Toolbar />
         <Typography>
-         
-        testing of navbar
         
         </Typography>
       </Box>

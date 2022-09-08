@@ -1,70 +1,39 @@
+import Home from './components/Home'
+import BlogListView from './components/BlogListView'
 
-import {React, useState, useEffect} from 'react'
-import BasicCard from './components/Cards'
 // import BasicPagination from './components/pagination'
 import DrawerAppBar from './components/Navbar'
+import About from './components/About'
 
 import {
-  BrowserRouter,
+
   Routes,
   Route,
   Link,
 } from "react-router-dom";
 // import your route components too
 
-import About from './components/About'
+
+
 export default function App(){
-  
-  const [error, setError] = useState(null)
-  const [isLoaded, setIsLoaded] = useState(false)
-  const [items, setItems] = useState([])
 
-  useEffect(() => {
-    fetch('http://localhost:8000/api/todos/')
-    .then((res) => res.json())
-    .then((result) =>{
-      setIsLoaded(true);
-      setItems(result);
-
-    },
-    ((error)=>{
-      setIsLoaded(true);
-      setError(error);
-
-    })
-    );
-  })
-  if (error){
-    return (
-      <p>Error: {error.message}</p>
-    )
-  }
-  else if (!isLoaded){
-    return (
-      <p>loading...</p>
-    )
-  }
   return (
+   
     <div>
-     <DrawerAppBar/>
-     
-      {items.map((item) =>(
-         <div className='car' key = {item.id} >
-      <br/>
-      
-         <BasicCard 
-         title = {item.title} 
-         desc ={item.description} />
-         </div>
-      )
-       
-      )}
+     <DrawerAppBar 
+     home = {<Link to="/">Home</Link>}
+     about = {<Link to="/about">About</Link>}
+     blog  = {<Link to="/BlogListView">Blog</Link>}
+     />
+    
+    <Routes>
+      <Route  path="/"  element ={<Home/>}></Route>
+      <Route  path="/about" element ={<About />}></Route>
+      <Route  path="/BlogListView" element ={<BlogListView />}></Route>
+    </Routes>
       
     </div>
 
-    
-    
   )
 }
 
-<Route path="teams/new" element={<About />} />

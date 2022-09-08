@@ -1,0 +1,16 @@
+
+.newnav{
+    display:flex;
+    justify-content: space-between;
+    text-align: center;
+}
+.newnav >*{
+    flex: 0px 0px auto;
+    padding: 5px;
+    color: white;
+}
+
+.listnav>*{
+    display: flex;
+    color:white;
+}
