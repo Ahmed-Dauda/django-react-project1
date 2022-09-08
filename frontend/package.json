@@ -31,11 +31,8 @@
     "start": "react-scripts start node index.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "scripts": {
-      "start": "node server.js",
-      "build": "cd client/ && yarn install && yarn build"
-    }
+    "eject": "react-scripts eject"
+
   },
   "eslintConfig": {
     "extends": [
