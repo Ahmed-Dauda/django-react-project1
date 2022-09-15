@@ -52,7 +52,7 @@ TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [
-            os.path.join(BASE_DIR, 'frontend/build')
+            os.path.join(BASE_DIR, 'build')
             ],
         "APP_DIRS": True,
         "OPTIONS": {
@@ -116,7 +116,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'build/static')
 # Configure app for Heroku deployment
 django_heroku.settings(locals())
 
-STATICFILES_DIRS = os.path.join(BASE_DIR, 'frontend/build/static'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'build/static'),
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
