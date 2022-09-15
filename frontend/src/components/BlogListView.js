@@ -9,7 +9,7 @@ export default function BlogListView(){
   const [items, setItems] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/todos/')
+    fetch('https://aboutahmed.herokuapp.com/api/todos/')
     .then((res) => res.json())
     .then((result) =>{
       setIsLoaded(true);
